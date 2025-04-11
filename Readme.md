@@ -1,4 +1,4 @@
-# Port Sniffer
+# Port Lookup
 
 ## Prerequisites
 - [Rust](https://www.rust-lang.org/tools/install) must be installed on your system.
