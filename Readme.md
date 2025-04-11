@@ -14,9 +14,22 @@
      cargo run -- -h
      ```
 
-   - To run the program with custom options:
+   - Replace `<Your IP Address>` with the target IP:
      ```bash
-     cargo run -- -j <Number of Threads> <Your IP Address>
+     cargo run -- -a `<IP Addresss>`
      ```
 
-   Replace `<Number of Threads>` with how many threads you want to use, and `<Your IP Address>` with the target IP.
+   - Replace `<Start Port>` with the port you want to start to lookup from:
+     ```bash
+     cargo run -- -s `<Start Port>`
+     ```
+
+   - Replace `<End Port>` with the port you want to end the port search from:
+     ```bash
+     cargo run -- -e `<End Port>`
+     ```
+
+   - To combine all of the above provide a target `<IP Address>` and the port range `<Start Port>` - `<End Port>`:
+     ```bash
+     cargo run -- -a `<IP Addresss>` -s `<Start Port>` -e `<End Port>`
+     ```
