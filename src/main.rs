@@ -11,7 +11,12 @@ const IPFALLBACK: IpAddr = IpAddr::V4(Ipv4Addr::new(127, 0, 0, 1));
 #[derive(Debug, Clone, Bpaf)]
 #[bpaf(options)]
 pub struct Arguments {
-    #[bpaf(long, short, fallback(IPFALLBACK))]
+    #[bpaf(
+        long, 
+        short,
+        guard(is_ipv4, "Only IPv4 addresses are supported."),
+        fallback(IPFALLBACK),
+    )]
     /// The ip address that you want to lookup. Must be a valid ipv4 address. Falls back to 127.0.0.1
     pub address: IpAddr,
     #[bpaf(
@@ -38,6 +43,10 @@ fn start_port_guard(input: &u16) -> bool {
 
 fn end_port_guard(input: &u16) -> bool {
     *input <= MAX
+}
+
+fn is_ipv4(addr: &IpAddr) -> bool {
+    matches!(addr, IpAddr::V4(_))
 }
 
 async fn scan(tx: Sender<u16>, port: u16, addr: IpAddr) {
