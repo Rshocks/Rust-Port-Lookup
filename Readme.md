@@ -1,4 +1,5 @@
 # Port Lookup
+- A Rust-based GUI port scanner that detects open TCP ports on an IPv4 address using asynchronous scanning
 - Only avaliable for IPv4
 
 ## Prerequisites
@@ -12,25 +13,5 @@
 
    - To view usage/help:
      ```bash
-     cargo run -- -h
-     ```
-
-   - Replace `<Your IP Address>` with the target IP:
-     ```bash
-     cargo run -- -a `<IP Addresss>`
-     ```
-
-   - Replace `<Start Port>` with the port you want to start to lookup from:
-     ```bash
-     cargo run -- a `<IP Addresss>` -s `<Start Port>`
-     ```
-
-   - Replace `<End Port>` with the port you want to end the port search from:
-     ```bash
-     cargo run -- a `<IP Addresss>` -e `<End Port>`
-     ```
-
-   - To combine all of the above provide a target `<IP Address>` and the port range `<Start Port>` - `<End Port>`:
-     ```bash
-     cargo run -- -a `<IP Addresss>` -s `<Start Port>` -e `<End Port>`
+     cargo run
      ```

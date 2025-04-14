@@ -1,8 +1,10 @@
 [package]
 name = "Port_Lookup"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2024"
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
 bpaf = {version = "0.7", features = ["derive", "bright-color"]}
+eframe = {version = "0.27"}
+egui = {version = "0.27"}
